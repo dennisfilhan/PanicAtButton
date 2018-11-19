@@ -1,17 +1,17 @@
 # Prototyping
 
-### Login
-![alt text](./Screenshoot/Login.png =300x)
+### Login Screen
+<img src="./Screenshoot/Login.png" style="width:300px;"/>
 
 ### Home Screen
-![alt text](./Screenshoot/Main.png =300x)
+<img src="./Screenshoot/Main.png" style="width:300px;"/>
 
 ### Profile Screen
-![alt text](./Screenshoot/Profile.png =300x)
+<img src="./Screenshoot/Profile.png" style="width:300px;"/>
 
 ### Profile Edit Screen
-![alt text](./Screenshoot/Profile_Edit.png =300x)
+<img src="./Screenshoot/Profile_Edit.png" style="width:300px;"/>
 
 ### Near Me
-![alt text](./Screenshoot/Near_Me.png =300x)
+<img src="./Screenshoot/Near_Me.png" style="width:300px;"/>
 
