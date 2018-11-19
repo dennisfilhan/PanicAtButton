@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProfileActivity">
+
+    <RelativeLayout
+        android:id="@+id/groupProfileImageBox"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_circle_half_bottom"></RelativeLayout>
+
+        <ImageView
+            android:id="@+id/lblProfileImage"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_centerInParent="true"
+            android:src="@drawable/ic_user_head_64_black" />
+
+        <TextView
+            android:id="@+id/lblProfileUsername"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lblProfileImage"
+            android:layout_marginTop="8dp"
+            android:text="Kirigaya Waskito"
+            android:textAlignment="center"
+            android:textColor="#606060"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/groupProfileImageBox"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:paddingTop="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/btnProfileEdit"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start"
+                        android:layout_weight="0.5"
+                        android:background="@android:color/transparent"
+                        android:text="Edit Profile"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/colorRed"
+                        android:textSize="12sp" />
+
+                    <Button
+                        android:id="@+id/btnProfileHistory"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:layout_weight="0.5"
+                        android:background="@android:color/transparent"
+                        android:text="Panic History"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/colorRed"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/row_profile_primary"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/label_profile_primary"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Nama Lengkap" />
+
+                    <TextView
+                        android:id="@+id/lblProfileFullname"
+                        style="@style/text_profile_primary"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Kirigaya Waskito" />
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/row_profile_primary"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/label_profile_primary"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Tempat, Tanggal Lahir" />
+
+                    <TextView
+                        android:id="@+id/lblProfileBirth"
+                        style="@style/text_profile_primary"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Klaten, 01 Desember 1996" />
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/row_profile_primary"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/label_profile_primary"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Domisili Sekarang" />
+
+                    <TextView
+                        android:id="@+id/lblProfileAddress"
+                        style="@style/text_profile_primary"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Jalan Pemuda No.140, Kabupaten, Klaten Tengah, Sikenong, Kabupaten, Klaten Tengah, Kabupaten Klaten, Jawa Tengah 57413"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/row_profile_primary"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/label_profile_primary"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="NO KTP" />
+
+                    <TextView
+                        android:id="@+id/lblProfileNoKTP"
+                        style="@style/text_profile_primary"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="000012341234" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/label_profile_primary"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Social Media" />
+
+                    <Button
+                        android:id="@+id/btnProfileFacebook"
+                        style="@style/row_profile_primary"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start"
+                        android:background="@android:color/transparent"
+                        android:drawableLeft="@drawable/ic_fb_32_black"
+                        android:drawablePadding="20dp"
+                        android:text="Facebook"
+                        android:textAlignment="textStart" />
+
+                    <Button
+                        android:id="@+id/btnProfileGoogle"
+                        style="@style/row_profile_primary"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start"
+                        android:background="@android:color/transparent"
+                        android:drawableLeft="@drawable/ic_gp_32_black"
+                        android:drawablePadding="20dp"
+                        android:text="Google"
+                        android:textAlignment="textStart" />
+
+                    <Button
+                        android:id="@+id/btnProfileTwitter"
+                        style="@style/row_profile_primary"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start"
+                        android:background="@android:color/transparent"
+                        android:drawableLeft="@drawable/ic_twitter_32_black"
+                        android:drawablePadding="20dp"
+                        android:text="Twitter"
+                        android:textAlignment="textStart" />
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</RelativeLayout>

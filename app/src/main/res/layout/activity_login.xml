@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_image_004"
+    tools:context=".LoginActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#aa000000">
+
+        <Button
+            style="@style/txt_login_primary"
+            android:layout_width="150dp"
+            android:layout_height="160dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="25dp"
+            android:background="@android:color/transparent"
+            android:drawablePadding="2dp"
+            android:drawableTop="@drawable/ic_alert_002_white"
+            android:text="Panic At Button!" />
+
+        <LinearLayout
+            android:id="@+id/groupBtnLogin"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="220dp"
+            android:orientation="vertical"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp">
+
+            <LinearLayout
+                android:id="@+id/groupInputSocial"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <Button
+                    style="@style/btn_login_primary"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/ic_fb_32_white"
+                    android:text="Facebook" />
+
+                <Button
+                    style="@style/btn_login_primary"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/ic_tw_32_white"
+                    android:text="Google" />
+
+                <Button
+                    style="@style/btn_login_primary"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/ic_gp_32_white"
+                    android:text="Twitter" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/groupInputManual"
+                android:visibility="gone"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Enter Email"
+                    android:textColorHint="#97f5f5f5"
+                    android:textAlignment="center"
+                    style="@style/btn_login_primary"/>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Enter Password"
+                    android:inputType="textPassword"
+                    android:textColorHint="#97f5f5f5"
+                    android:textAlignment="center"
+                    style="@style/btn_login_primary"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <TextView
+            style="@style/txt_login_primary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/groupBtnLogin"
+            android:layout_marginTop="50dp"
+            android:text="Try, Sign-in with Email and Password"
+            android:textAlignment="center"
+            android:textSize="12sp" />
+    </RelativeLayout>
+
+</RelativeLayout>
