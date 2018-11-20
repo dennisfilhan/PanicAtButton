@@ -3,12 +3,14 @@
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="wrap_content"
     android:layout_height="wrap_content">
     <LinearLayout
+        android:id="@+id/layoutWeatherMain"
         android:padding="20dp"
         android:layout_width="180dp"
         android:layout_height="match_parent"
         android:orientation="horizontal">
 
         <ImageView
+            android:id="@+id/lblWeatherImg"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:src="@drawable/ic_smile_32_black"
@@ -22,6 +24,7 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/lblWeatherLoc"
                 android:textAlignment="center"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -29,13 +32,15 @@
                 android:textSize="16sp" />
 
             <TextView
+                android:id="@+id/lblWeatherTemp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="30*C"
+                android:text="30℃"
                 android:textAlignment="center"
                 android:textSize="32sp" />
 
             <TextView
+                android:id="@+id/lblWeatherTempDesc"
                 android:textAllCaps="true"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
