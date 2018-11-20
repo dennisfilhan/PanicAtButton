@@ -9,6 +9,8 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import com.eai.dlapan.panicatbutton.ext.PanicDialog;
+
 import pl.bclogic.pulsator4droid.library.PulsatorLayout;
 
 public class MainActivity extends AppCompatActivity {
@@ -29,15 +31,7 @@ public class MainActivity extends AppCompatActivity {
         btnPanic.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                pulsator.setDuration(1000);
-                new Handler().postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        pulsator.setDuration(pulsatorBaseDuration);
-
-                        startActivity(new Intent(getApplicationContext(),LoginActivity.class));
-                    }
-                }, 10*1000);
+                new PanicDialog(MainActivity.this, pulsator).show();
             }
         });
         btnMenu = (ImageButton) findViewById(R.id.btnMainMenu);
