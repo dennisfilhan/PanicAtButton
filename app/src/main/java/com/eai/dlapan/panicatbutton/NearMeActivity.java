@@ -5,6 +5,8 @@ import android.location.LocationListener;
 import android.location.LocationManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
@@ -12,7 +14,20 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.eai.dlapan.panicatbutton.api.APIConfig;
+import com.eai.dlapan.panicatbutton.domain.NewsModel.News;
+import com.eai.dlapan.panicatbutton.domain.NewsModel.NewsResponse;
+import com.eai.dlapan.panicatbutton.ext.NewsRecycler;
+import com.eai.dlapan.panicatbutton.sevices.NewsService;
 import com.eai.dlapan.panicatbutton.sevices.WeatherService;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class NearMeActivity extends AppCompatActivity {
 
@@ -20,6 +35,7 @@ public class NearMeActivity extends AppCompatActivity {
     private Double lat, lon;
     private String latlon;
     private Location _location;
+    private List<News> newsList;
 
     private final LocationListener mLocationListener = new LocationListener() {
         @Override
@@ -53,14 +69,29 @@ public class NearMeActivity extends AppCompatActivity {
     };
     private LocationManager locationManager;
 
+    // Elements
+    private RecyclerView newsRecycler;
+
+    // Adapter
+    private NewsRecycler newsAdapter;
 
     // Services
     private WeatherService weatherService;
+    private NewsService newsService;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_near_me);
+
+        /*
+        * Elements
+        * */
+        newsList=new ArrayList<>();
+        newsRecycler=(RecyclerView)findViewById(R.id.recyclerNews);
+        newsRecycler.setLayoutManager(new LinearLayoutManager(this));
+        newsAdapter = new NewsRecycler(this.newsList);
+        newsRecycler.setAdapter(newsAdapter);
 
         /*
          * Services
@@ -78,6 +109,32 @@ public class NearMeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 weatherService.setWeather(latlon);
+            }
+        });
+        newsService=new NewsService();
+
+        loadNews();
+    }
+
+    private void loadNews(){
+        Call<NewsResponse> call = APIConfig.RETROFIT_SERVICE.getListNews();
+        call.enqueue(new Callback<NewsResponse>() {
+            @Override
+            public void onResponse(Call<NewsResponse> call, Response<NewsResponse> response) {
+                Log.d("NEWS_DATA_RESPONSE", "Response "+response.body().toString());
+                List<News> list=response.body().getArticles();
+                newsList.clear();
+                newsList.addAll(list);
+                newsAdapter.notifyDataSetChanged();
+                //newsRecycler.setAdapter(new NewsRecycler(list));
+
+                //Log.d("DATA_LIST_NEWS","Count: "+newsRecycler.getAdapter().getItemCount());
+                Log.d("DATA_LIST_NEWS","Items: "+list.toString());
+            }
+
+            @Override
+            public void onFailure(Call<NewsResponse> call, Throwable t) {
+                Log.d("NEWS_DATA_RESPONSE", "Failed! Cause "+t.getMessage());
             }
         });
     }

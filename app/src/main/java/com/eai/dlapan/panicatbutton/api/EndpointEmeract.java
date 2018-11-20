@@ -1,5 +1,7 @@
 package com.eai.dlapan.panicatbutton.api;
 
+import com.eai.dlapan.panicatbutton.domain.NewsModel.NewsResponse;
+
 import java.util.Map;
 
 import retrofit2.Call;
@@ -14,6 +16,6 @@ public interface EndpointEmeract {
     Call<Map<String,Object>> getCurrentWeather(@Query("latlon") String latlon);
 
     // News
-//    @GET("/api/news")
-//    Call<ArticleResponse> getListNews();
+    @GET("/api/news")
+    Call<NewsResponse> getListNews();
 }

@@ -18,7 +18,7 @@
             android:layout_alignParentTop="true"
             android:background="@drawable/bg_circle_half_left"></RelativeLayout>
 
-        <include layout="@layout/item_weather_info"/>
+        <include layout="@layout/item_weather_info" />
     </RelativeLayout>
 
     <ScrollView
@@ -40,9 +40,12 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp">
 
                 <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recyclerNews"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>
             </LinearLayout>
@@ -52,20 +55,21 @@
                 android:layout_width="match_parent"
                 android:layout_height="20dp" />
 
-            <TextView
-                style="@style/text_display_1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Panic Area" />
+            <!--<TextView-->
+            <!--style="@style/text_display_1"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="Panic Area" />-->
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+            <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content">-->
 
-                <android.support.v7.widget.RecyclerView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>
-            </LinearLayout>
+            <!--<android.support.v7.widget.RecyclerView-->
+            <!--android:id="@+id/recycler"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>-->
+            <!--</LinearLayout>-->
         </LinearLayout>
     </ScrollView>
 </RelativeLayout>
